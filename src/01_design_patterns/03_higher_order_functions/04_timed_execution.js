@@ -19,7 +19,16 @@ console.log(output); // Output should be something like { result: 7, time: 0.123
 */
 
 function timeExecution(fn) {
-    // Your code here
+    return function(...args) {
+        const startTime = performance.now();
+        const result = fn(...args)
+        const endTime = performance.now();
+
+        return {
+            result,
+            time: endTime - startTime
+        }
+    }
 }
 
 
