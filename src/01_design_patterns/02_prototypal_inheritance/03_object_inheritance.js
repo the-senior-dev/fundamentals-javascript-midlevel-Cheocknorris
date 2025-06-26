@@ -65,49 +65,33 @@ Car.passengers = 4;
 Car.trunkSpace = 400;  // New Property, trunk space in liters
 
 // TODO: Create a ToyotaSupra object that inherits from the Car object
-// const ToyotaSupra = Object.create(Car);
-const ToyotaSupra = {};
+const ToyotaSupra = Object.create(Car);
+ToyotaSupra.name = "Toyota";
+ToyotaSupra.model = "Supra";
+ToyotaSupra.maxSpeed = 250;
+ToyotaSupra.turbo = true;
 
-// TODO: Set the 'name' property of the ToyotaSupra object to "Toyota"
-// ToyotaSupra.name = "Toyota";
+const CustomSupra = Object.create(ToyotaSupra);
 
-// TODO: Set the 'model' property of the ToyotaSupra object to "Supra"
-// ToyotaSupra.model = "Supra";
+CustomSupra.maxSpeed = 270;  
+CustomSupra.customPaint = "Metallic Red";
 
-// TODO: Set the 'maxSpeed' property of the ToyotaSupra object to 250
-// ToyotaSupra.maxSpeed = 250;
+CustomSupra.showOff = function() {
+    return "Look at my custom paint and faster speed!";
+};
 
-// TODO: Set the 'turbo' property of the ToyotaSupra object to true
-// ToyotaSupra.turbo = true;
+const MotorBike = Object.create(Vehicle);
 
-// TODO: Create a CustomSupra object that inherits from ToyotaSupra
-const CustomSupra = {};
-// const CustomSupra = Object.create(ToyotaSupra);
 
-// TODO: Customize the CustomSupra object
-// For example, you could change its maxSpeed, add custom properties, or even methods.
-// CustomSupra.maxSpeed = 270;  // Increase max speed
-// CustomSupra.customPaint = "Metallic Red";  // Add a custom paint job
-
-// TODO: Optionally, add new methods to CustomSupra
-// CustomSupra.showOff = function() {
-//    return "Look at my custom paint and faster speed!";
-// };
-
-// Example 2. MotorBike Object
-// MotorBike Object
-// const MotorBike = Object.create(Vehicle);
-const MotorBike = {}
-
-// MotorBike.name = "Honda";
-// MotorBike.model = "CBR 600";
-// MotorBike.wheels = 2;
-// MotorBike.engine = "inline 4";
-// MotorBike.passengers = 2;
-// MotorBike.sidecar = false; // New Property, indicates if the motorbike has a sidecar
-// MotorBike.wheelie = function() {  // New Method
-//     return "Doing a wheelie!";
-// };
+MotorBike.name = "Honda";
+MotorBike.model = "CBR 600";
+MotorBike.wheels = 2;
+MotorBike.engine = "inline 4";
+MotorBike.passengers = 2;
+MotorBike.sidecar = false; // New Property, indicates if the motorbike has a sidecar
+MotorBike.wheelie = function() {  // New Method
+    return "Doing a wheelie!";
+};
 
 // Don't touch this code
 module.exports = {
